@@ -7,19 +7,15 @@ const CategoryNews = () => {
   const data = useLoaderData();
 
   const allNews = Array.isArray(data) ? data : data?.news || [];
-
   const [categoryNews, setCategoryNews] = useState([]);
 
   useEffect(() => {
     if (id === "0") {
       setCategoryNews(allNews);
-    } else if (id === "1") {
-      const filteredNews = allNews.filter(
-        (news) => news.others?.is_today_pick === true
-      );
-      setCategoryNews(filteredNews);
     } else {
-      const filteredNews = allNews.filter((news) => news.category_id === id);
+      const filteredNews = allNews.filter(
+        (news) => String(news.category_id) === String(id)
+      );
       setCategoryNews(filteredNews);
     }
   }, [id, allNews]);
@@ -27,7 +23,8 @@ const CategoryNews = () => {
   return (
     <div>
       <h2 className="font-bold mb-5">
-        Total <span className="text-secondary">{categoryNews.length}</span> news Found
+        Total <span className="text-secondary">{categoryNews.length}</span> news
+        Found
       </h2>
 
       <div className="grid grid-cols-1 gap-5">

@@ -3,7 +3,7 @@ import user from "../assets/user.png";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between items-center">
+    <div className="btn bg-white border border-base-300 hover:bg-base-200 text-primary font-semibold">
       <div></div>
 
       <div className="nav flex gap-5 text-accent">

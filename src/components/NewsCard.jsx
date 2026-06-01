@@ -8,7 +8,7 @@ const NewsCard = ({ news }) => {
   ).toLocaleDateString();
 
   return (
-    <div className="card bg-base-100 shadow-md mb-6">
+    <div className="card bg-white border border-base-300 shadow-sm text-primary">
       {/* Author + Share */}
       <div className="flex bg-base-200 justify-between items-center p-4">
         <div className="flex items-center gap-3">
@@ -40,7 +40,7 @@ const NewsCard = ({ news }) => {
         <img
           src={thumbnail_url}
           alt={title}
-          className="w-full h-48 object-cover rounded-md"
+          className="w-full h-full object-cover"
         />
       </div>
 
